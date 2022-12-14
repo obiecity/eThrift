@@ -4,6 +4,7 @@ from src import db
 
 customers = Blueprint('customers', __name__)
 
+# generate list of all customers
 @customers.route('/customers', methods=['GET'])
 def get_customers():
     cursor = db.get_db().cursor()
@@ -19,6 +20,7 @@ def get_customers():
     the_response.mimetype = 'application/json'
     return the_response
 
+# generate list of all customers by their userID
 @customers.route('/customers/<userID>', methods=['GET'])
 def get_customer(userID):
     cursor = db.get_db().cursor()
@@ -33,6 +35,7 @@ def get_customer(userID):
     the_response.mimetype = 'application/json'
     return the_response
 
+# create new customer
 @customers.route('/customers/new', methods=['POST'])
 def add_buyer():
     current_app.logger.info(request.form)
