@@ -4,6 +4,7 @@ from src import db
 
 products = Blueprint('products', __name__)
 
+# show all products
 @products.route('/products')
 def get_products():
     cursor = db.get_db().cursor()
@@ -15,6 +16,7 @@ def get_products():
         json_data.append(dict(zip(column_headers, row)))
     return jsonify(json_data)
 
+# return the 25 cheapest products
 @products.route('/cheapproducts')
 def get_cheap_products():
     cursor = db.get_db().cursor()
@@ -33,6 +35,7 @@ def get_cheap_products():
         json_data.append(dict(zip(column_headers, row)))
     return jsonify(json_data)
 
+# return the top 10 highest rated products
 @products.route('/top10products')
 def get_top_10_products():
     cursor = db.get_db().cursor()
@@ -51,6 +54,7 @@ def get_top_10_products():
         json_data.append(dict(zip(column_headers, row)))
     return jsonify(json_data)
 
+# list a new item for sale
 @products.route('/products/list', methods=['POST'])
 def add_buyer():
     current_app.logger.info(request.form)
