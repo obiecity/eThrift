@@ -1,24 +1,10 @@
-# MySQL + Flask Boilerplate Project
+# Welcome to eThrift
 
-This repo contains a boilerplate setup for spinning up 2 docker containers: 
-1. A MySQL 8 container for obvious reasons
-1. A Python Flask container to implement a REST API
+eThrift is an online marketplace for thrifted clothing. Below you will find a video describing the app in better detail. In the rest of this repo, you will find 8 total Python routes in the Flask API, as well as the Docker setup files. All files are commented, so the routes will have explanations above their code.
 
-## How to setup and start the containers
-**Important** - you need Docker Desktop installed
+## eThrift video link: https://drive.google.com/file/d/1LvkTWw93swczwJmLAN8hLu3YlPdASRO0/view?usp=sharing
 
-1. Clone this repository.  
-1. Create a file named `db_root_password.txt` in the `secrets/` folder and put inside of it the root password for MySQL. 
-1. Create a file named `db_password.txt` in the `secrets/` folder and put inside of it the password you want to use for the `webapp` user. 
-1. In a terminal or command prompt, navigate to the folder with the `docker-compose.yml` file.  
-1. Build the images with `docker compose build`
-1. Start the containers with `docker compose up`.  To run in detached mode, run `docker compose up -d`. 
-
-## For setting up a Conda Web-Dev environment:
-
-1. `conda create -n webdev python=3.9`
-1. `conda activate webdev`
-1. `pip install flask flask-mysql flask-restful cryptography flask-login`
+Thank you for viewing. Please have a great winter break! :)
 
 
 
