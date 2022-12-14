@@ -12,6 +12,7 @@ app = create_app()
 app.register_blueprint(customers, url_prefix='/customers')
 app.register_blueprint(products, url_prefix='/products')
 
+# greet user by their first name
 @app.route('/hello/<firstName>')
 def hello_guest(firstName):
     return f'<h1>Hello, {firstName}! Welcome to eThrift, the best option for online thrifting!<h1>'
